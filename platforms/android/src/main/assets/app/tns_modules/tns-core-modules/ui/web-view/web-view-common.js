@@ -51,7 +51,7 @@ srcProperty.metadata.onSetNativeValue = onSrcPropertyChanged;
 var WebView = (function (_super) {
     __extends(WebView, _super);
     function WebView() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(WebView.prototype, "url", {
         get: function () {
@@ -110,19 +110,19 @@ var WebView = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    WebView.loadStartedEvent = "loadStarted";
-    WebView.loadFinishedEvent = "loadFinished";
-    WebView.navigationTypes = [
-        "linkClicked",
-        "formSubmitted",
-        "backForward",
-        "reload",
-        "formResubmitted",
-        "other"
-    ];
-    WebView.urlProperty = urlProperty;
-    WebView.srcProperty = srcProperty;
     return WebView;
 }(view.View));
+WebView.loadStartedEvent = "loadStarted";
+WebView.loadFinishedEvent = "loadFinished";
+WebView.navigationTypes = [
+    "linkClicked",
+    "formSubmitted",
+    "backForward",
+    "reload",
+    "formResubmitted",
+    "other"
+];
+WebView.urlProperty = urlProperty;
+WebView.srcProperty = srcProperty;
 exports.WebView = WebView;
 //# sourceMappingURL=web-view-common.js.map

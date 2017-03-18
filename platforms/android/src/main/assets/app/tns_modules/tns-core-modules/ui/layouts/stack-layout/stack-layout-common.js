@@ -10,7 +10,7 @@ function validateOrientation(value) {
 var StackLayout = (function (_super) {
     __extends(StackLayout, _super);
     function StackLayout() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(StackLayout.prototype, "orientation", {
         get: function () {
@@ -22,8 +22,8 @@ var StackLayout = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    StackLayout.orientationProperty = new dependency_observable_1.Property("orientation", "StackLayout", new proxy_1.PropertyMetadata(enums_1.Orientation.vertical, AffectsLayout, undefined, validateOrientation));
     return StackLayout;
 }(layout_base_1.LayoutBase));
+StackLayout.orientationProperty = new dependency_observable_1.Property("orientation", "StackLayout", new proxy_1.PropertyMetadata(enums_1.Orientation.vertical, AffectsLayout, undefined, validateOrientation));
 exports.StackLayout = StackLayout;
 //# sourceMappingURL=stack-layout-common.js.map

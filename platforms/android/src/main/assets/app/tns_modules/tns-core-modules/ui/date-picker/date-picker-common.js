@@ -4,7 +4,7 @@ var view = require("ui/core/view");
 var DatePicker = (function (_super) {
     __extends(DatePicker, _super);
     function DatePicker() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     Object.defineProperty(DatePicker.prototype, "year", {
         get: function () {
@@ -66,13 +66,13 @@ var DatePicker = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    DatePicker.yearProperty = new dependencyObservable.Property("year", "DatePicker", new proxy.PropertyMetadata(undefined));
-    DatePicker.monthProperty = new dependencyObservable.Property("month", "DatePicker", new proxy.PropertyMetadata(undefined));
-    DatePicker.dayProperty = new dependencyObservable.Property("day", "DatePicker", new proxy.PropertyMetadata(undefined));
-    DatePicker.maxDateProperty = new dependencyObservable.Property("maxDate", "DatePicker", new proxy.PropertyMetadata(undefined));
-    DatePicker.minDateProperty = new dependencyObservable.Property("minDate", "DatePicker", new proxy.PropertyMetadata(undefined));
-    DatePicker.dateProperty = new dependencyObservable.Property("date", "DatePicker", new proxy.PropertyMetadata(undefined));
     return DatePicker;
 }(view.View));
+DatePicker.yearProperty = new dependencyObservable.Property("year", "DatePicker", new proxy.PropertyMetadata(undefined));
+DatePicker.monthProperty = new dependencyObservable.Property("month", "DatePicker", new proxy.PropertyMetadata(undefined));
+DatePicker.dayProperty = new dependencyObservable.Property("day", "DatePicker", new proxy.PropertyMetadata(undefined));
+DatePicker.maxDateProperty = new dependencyObservable.Property("maxDate", "DatePicker", new proxy.PropertyMetadata(undefined));
+DatePicker.minDateProperty = new dependencyObservable.Property("minDate", "DatePicker", new proxy.PropertyMetadata(undefined));
+DatePicker.dateProperty = new dependencyObservable.Property("date", "DatePicker", new proxy.PropertyMetadata(undefined));
 exports.DatePicker = DatePicker;
 //# sourceMappingURL=date-picker-common.js.map

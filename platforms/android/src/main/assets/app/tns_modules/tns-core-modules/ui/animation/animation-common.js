@@ -25,15 +25,6 @@ var CubicBezierAnimationCurve = (function () {
     return CubicBezierAnimationCurve;
 }());
 exports.CubicBezierAnimationCurve = CubicBezierAnimationCurve;
-var AnimationPromise = (function () {
-    function AnimationPromise() {
-    }
-    AnimationPromise.prototype.cancel = function () { };
-    AnimationPromise.prototype.then = function (onFulfilled, onRejected) { return new AnimationPromise(); };
-    AnimationPromise.prototype.catch = function (onRejected) { return new AnimationPromise(); };
-    return AnimationPromise;
-}());
-exports.AnimationPromise = AnimationPromise;
 var Animation = (function () {
     function Animation(animationDefinitions, playSequentially) {
         if (!animationDefinitions || animationDefinitions.length === 0) {

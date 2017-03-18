@@ -4,9 +4,10 @@ var proxy = require("ui/core/proxy");
 var Progress = (function (_super) {
     __extends(Progress, _super);
     function Progress() {
-        _super.call(this);
-        this.maxValue = 100;
-        this.value = 0;
+        var _this = _super.call(this) || this;
+        _this.maxValue = 100;
+        _this.value = 0;
+        return _this;
     }
     Object.defineProperty(Progress.prototype, "maxValue", {
         get: function () {
@@ -32,9 +33,9 @@ var Progress = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Progress.valueProperty = new dependency_observable_1.Property("value", "Progress", new proxy.PropertyMetadata(0));
-    Progress.maxValueProperty = new dependency_observable_1.Property("maxValue", "Progress", new proxy.PropertyMetadata(100));
     return Progress;
 }(view_1.View));
+Progress.valueProperty = new dependency_observable_1.Property("value", "Progress", new proxy.PropertyMetadata(0));
+Progress.maxValueProperty = new dependency_observable_1.Property("maxValue", "Progress", new proxy.PropertyMetadata(100));
 exports.Progress = Progress;
 //# sourceMappingURL=progress-common.js.map

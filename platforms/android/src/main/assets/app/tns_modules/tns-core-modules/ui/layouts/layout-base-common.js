@@ -12,8 +12,9 @@ clipToBoundsProperty.metadata.onSetNativeValue = onClipToBoundsPropertyChanged;
 var LayoutBase = (function (_super) {
     __extends(LayoutBase, _super);
     function LayoutBase() {
-        _super.apply(this, arguments);
-        this._subViews = new Array();
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._subViews = new Array();
+        return _this;
     }
     LayoutBase.prototype._addChildFromBuilder = function (name, value) {
         if (value instanceof view.View) {
@@ -174,8 +175,8 @@ var LayoutBase = (function (_super) {
             view.View.restoreChildOriginalParams(child);
         }
     };
-    LayoutBase.clipToBoundsProperty = clipToBoundsProperty;
     return LayoutBase;
 }(view.CustomLayoutView));
+LayoutBase.clipToBoundsProperty = clipToBoundsProperty;
 exports.LayoutBase = LayoutBase;
 //# sourceMappingURL=layout-base-common.js.map

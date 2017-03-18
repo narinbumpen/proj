@@ -3,7 +3,7 @@ var platform = require("platform");
 var ImageAsset = (function (_super) {
     __extends(ImageAsset, _super);
     function ImageAsset() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ImageAsset.prototype, "options", {
         get: function () {

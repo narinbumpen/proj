@@ -7,7 +7,7 @@ global.moduleMerge(textBase, exports);
 var TextField = (function (_super) {
     __extends(TextField, _super);
     function TextField() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(TextField.prototype, "secure", {
         get: function () {
@@ -19,8 +19,8 @@ var TextField = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    TextField.returnPressEvent = "returnPress";
     return TextField;
 }(editableTextBase.EditableTextBase));
+TextField.returnPressEvent = "returnPress";
 exports.TextField = TextField;
 //# sourceMappingURL=text-field-common.js.map

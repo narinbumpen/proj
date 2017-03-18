@@ -4,7 +4,7 @@ var view = require("ui/core/view");
 var HtmlView = (function (_super) {
     __extends(HtmlView, _super);
     function HtmlView() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(HtmlView.prototype, "html", {
         get: function () {
@@ -16,8 +16,8 @@ var HtmlView = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    HtmlView.htmlProperty = new dependencyObservable.Property("html", "HtmlView", new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.AffectsLayout));
     return HtmlView;
 }(view.View));
+HtmlView.htmlProperty = new dependencyObservable.Property("html", "HtmlView", new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.AffectsLayout));
 exports.HtmlView = HtmlView;
 //# sourceMappingURL=html-view-common.js.map

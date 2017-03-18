@@ -63,10 +63,9 @@ function onRowHeightPropertyChanged(data) {
 var ListView = (function (_super) {
     __extends(ListView, _super);
     function ListView() {
-        var _this = this;
-        _super.apply(this, arguments);
-        this._itemTemplateSelectorBindable = new bindable_1.Bindable();
-        this._defaultTemplate = {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._itemTemplateSelectorBindable = new bindable_1.Bindable();
+        _this._defaultTemplate = {
             key: "default",
             createView: function () {
                 if (_this.itemTemplate) {
@@ -76,7 +75,8 @@ var ListView = (function (_super) {
                 return undefined;
             }
         };
-        this._itemTemplatesInternal = new Array(this._defaultTemplate);
+        _this._itemTemplatesInternal = new Array(_this._defaultTemplate);
+        return _this;
     }
     Object.defineProperty(ListView.prototype, "items", {
         get: function () {
@@ -177,7 +177,7 @@ var ListView = (function (_super) {
             var dataItem = this._getDataItem(index);
             templateKey = this._itemTemplateSelector(dataItem, index, this.items);
         }
-        for (var i = 0, length = this._itemTemplatesInternal.length; i < length; i++) {
+        for (var i = 0, length_1 = this._itemTemplatesInternal.length; i < length_1; i++) {
             if (this._itemTemplatesInternal[i].key === templateKey) {
                 return this._itemTemplatesInternal[i];
             }
@@ -221,17 +221,17 @@ var ListView = (function (_super) {
     };
     ListView.prototype._onItemTemplatesPropertyChanged = function (data) {
     };
-    ListView.itemLoadingEvent = "itemLoading";
-    ListView.itemTapEvent = "itemTap";
-    ListView.loadMoreItemsEvent = "loadMoreItems";
-    ListView.knownFunctions = ["itemTemplateSelector"];
-    ListView.separatorColorProperty = new dependencyObservable.Property(SEPARATORCOLOR, LISTVIEW, new proxy.PropertyMetadata(undefined));
-    ListView.itemsProperty = new dependencyObservable.Property(ITEMS, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsPropertyChanged));
-    ListView.itemTemplateProperty = new dependencyObservable.Property(ITEMTEMPLATE, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatePropertyChanged));
-    ListView.itemTemplatesProperty = new dependencyObservable.Property(ITEMTEMPLATES, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatesPropertyChanged));
-    ListView.isScrollingProperty = new dependencyObservable.Property(ISSCROLLING, LISTVIEW, new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.None));
-    ListView.rowHeightProperty = new dependencyObservable.Property(ROWHEIGHT, LISTVIEW, new proxy.PropertyMetadata(-1, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onRowHeightPropertyChanged));
     return ListView;
 }(view.View));
+ListView.itemLoadingEvent = "itemLoading";
+ListView.itemTapEvent = "itemTap";
+ListView.loadMoreItemsEvent = "loadMoreItems";
+ListView.knownFunctions = ["itemTemplateSelector"];
+ListView.separatorColorProperty = new dependencyObservable.Property(SEPARATORCOLOR, LISTVIEW, new proxy.PropertyMetadata(undefined));
+ListView.itemsProperty = new dependencyObservable.Property(ITEMS, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsPropertyChanged));
+ListView.itemTemplateProperty = new dependencyObservable.Property(ITEMTEMPLATE, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatePropertyChanged));
+ListView.itemTemplatesProperty = new dependencyObservable.Property(ITEMTEMPLATES, LISTVIEW, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatesPropertyChanged));
+ListView.isScrollingProperty = new dependencyObservable.Property(ISSCROLLING, LISTVIEW, new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.None));
+ListView.rowHeightProperty = new dependencyObservable.Property(ROWHEIGHT, LISTVIEW, new proxy.PropertyMetadata(-1, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onRowHeightPropertyChanged));
 exports.ListView = ListView;
 //# sourceMappingURL=list-view-common.js.map

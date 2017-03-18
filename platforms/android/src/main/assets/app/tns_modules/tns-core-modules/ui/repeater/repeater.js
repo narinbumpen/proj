@@ -39,12 +39,13 @@ function onItemsLayoutPropertyPropertyChanged(data) {
 var Repeater = (function (_super) {
     __extends(Repeater, _super);
     function Repeater() {
-        _super.call(this);
-        this._isDirty = false;
+        var _this = _super.call(this) || this;
+        _this._isDirty = false;
         if (platform.device.os === platform.platformNames.ios) {
-            this._ios = UIView.new();
+            _this._ios = UIView.new();
         }
-        this.itemsLayout = new stackLayout.StackLayout();
+        _this.itemsLayout = new stackLayout.StackLayout();
+        return _this;
     }
     Object.defineProperty(Repeater.prototype, "items", {
         get: function () {
@@ -197,10 +198,10 @@ var Repeater = (function (_super) {
         var heightAndState = viewModule.View.resolveSizeAndState(result.measuredHeight, height, heightMode, 0);
         this.setMeasuredDimension(widthAndState, heightAndState);
     };
-    Repeater.itemsProperty = new dependencyObservable.Property(ITEMS, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsPropertyChanged));
-    Repeater.itemTemplateProperty = new dependencyObservable.Property(ITEMTEMPLATE, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatePropertyChanged));
-    Repeater.itemsLayoutProperty = new dependencyObservable.Property(LAYOUT, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsLayoutPropertyPropertyChanged));
     return Repeater;
 }(viewModule.CustomLayoutView));
+Repeater.itemsProperty = new dependencyObservable.Property(ITEMS, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsPropertyChanged));
+Repeater.itemTemplateProperty = new dependencyObservable.Property(ITEMTEMPLATE, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemTemplatePropertyChanged));
+Repeater.itemsLayoutProperty = new dependencyObservable.Property(LAYOUT, REPEATER, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.AffectsLayout, onItemsLayoutPropertyPropertyChanged));
 exports.Repeater = Repeater;
 //# sourceMappingURL=repeater.js.map

@@ -72,9 +72,9 @@ function getAncestor(view, criterion) {
     else {
         matcher = function (view) { return view instanceof criterion; };
     }
-    for (var parent = view.parent; parent != null; parent = parent.parent) {
-        if (matcher(parent)) {
-            return parent;
+    for (var parent_1 = view.parent; parent_1 != null; parent_1 = parent_1.parent) {
+        if (matcher(parent_1)) {
+            return parent_1;
         }
     }
     return null;
@@ -83,7 +83,7 @@ exports.getAncestor = getAncestor;
 function PseudoClassHandler() {
     var pseudoClasses = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        pseudoClasses[_i - 0] = arguments[_i];
+        pseudoClasses[_i] = arguments[_i];
     }
     var stateEventNames = pseudoClasses.map(function (s) { return ":" + s; });
     var listeners = Symbol("listeners");
@@ -122,30 +122,31 @@ var isUserInteractionEnabledProperty = new dependency_observable_1.Property("isU
 var View = (function (_super) {
     __extends(View, _super);
     function View() {
-        _super.call(this, {});
-        this._isVisibleCache = true;
-        this._measuredWidth = Number.NaN;
-        this._measuredHeight = Number.NaN;
-        this._oldWidthMeasureSpec = Number.NaN;
-        this._oldHeightMeasureSpec = Number.NaN;
-        this._oldLeft = 0;
-        this._oldTop = 0;
-        this._oldRight = 0;
-        this._oldBottom = 0;
-        this._isLayoutValid = false;
-        this._isAddedToNativeVisualTree = false;
-        this._gestureObservers = {};
-        this.cssClasses = new Set();
-        this.cssPseudoClasses = new Set();
-        this.pseudoClassAliases = {
+        var _this = _super.call(this, {}) || this;
+        _this._isVisibleCache = true;
+        _this._measuredWidth = Number.NaN;
+        _this._measuredHeight = Number.NaN;
+        _this._oldWidthMeasureSpec = Number.NaN;
+        _this._oldHeightMeasureSpec = Number.NaN;
+        _this._oldLeft = 0;
+        _this._oldTop = 0;
+        _this._oldRight = 0;
+        _this._oldBottom = 0;
+        _this._isLayoutValid = false;
+        _this._isAddedToNativeVisualTree = false;
+        _this._gestureObservers = {};
+        _this.cssClasses = new Set();
+        _this.cssPseudoClasses = new Set();
+        _this.pseudoClassAliases = {
             'highlighted': [
                 'active',
                 'pressed'
             ]
         };
-        this._style = new style.Style(this);
-        this._domId = viewIdCounter++;
-        this._goToVisualState("normal");
+        _this._style = new style.Style(_this);
+        _this._domId = viewIdCounter++;
+        _this._goToVisualState("normal");
+        return _this;
     }
     View.prototype.getGestureObservers = function (type) {
         return this._gestureObservers[type];
@@ -1414,17 +1415,17 @@ var View = (function (_super) {
         this._cssState.apply();
         this.style._endUpdate();
     };
-    View.loadedEvent = "loaded";
-    View.unloadedEvent = "unloaded";
-    View.automationTextProperty = automationTextProperty;
-    View.idProperty = idProperty;
-    View.cssClassProperty = cssClassProperty;
-    View.classNameProperty = classNameProperty;
-    View.originXProperty = originXProperty;
-    View.originYProperty = originYProperty;
-    View.isEnabledProperty = isEnabledProperty;
-    View.isUserInteractionEnabledProperty = isUserInteractionEnabledProperty;
     return View;
 }(proxy_1.ProxyObject));
+View.loadedEvent = "loaded";
+View.unloadedEvent = "unloaded";
+View.automationTextProperty = automationTextProperty;
+View.idProperty = idProperty;
+View.cssClassProperty = cssClassProperty;
+View.classNameProperty = classNameProperty;
+View.originXProperty = originXProperty;
+View.originYProperty = originYProperty;
+View.isEnabledProperty = isEnabledProperty;
+View.isUserInteractionEnabledProperty = isUserInteractionEnabledProperty;
 exports.View = View;
 //# sourceMappingURL=view-common.js.map

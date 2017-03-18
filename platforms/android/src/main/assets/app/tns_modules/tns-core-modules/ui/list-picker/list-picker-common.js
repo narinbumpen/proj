@@ -7,7 +7,7 @@ exports.traceCategory = "ListPicker";
 var ListPicker = (function (_super) {
     __extends(ListPicker, _super);
     function ListPicker() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ListPicker.prototype, "selectedIndex", {
         get: function () {
@@ -71,10 +71,10 @@ var ListPicker = (function (_super) {
             this.selectedIndex = 0;
         }
     };
-    ListPicker.selectedIndexProperty = new dependencyObservable.Property("selectedIndex", "ListPicker", new proxy.PropertyMetadata(undefined));
-    ListPicker.itemsProperty = new dependencyObservable.Property("items", "ListPicker", new proxy.PropertyMetadata(undefined));
     return ListPicker;
 }(view.View));
+ListPicker.selectedIndexProperty = new dependencyObservable.Property("selectedIndex", "ListPicker", new proxy.PropertyMetadata(undefined));
+ListPicker.itemsProperty = new dependencyObservable.Property("items", "ListPicker", new proxy.PropertyMetadata(undefined));
 exports.ListPicker = ListPicker;
 function onSelectedIndexPropertyChanged(data) {
     var picker = data.object;

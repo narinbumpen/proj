@@ -4,7 +4,7 @@ var proxy = require("ui/core/proxy");
 var Switch = (function (_super) {
     __extends(Switch, _super);
     function Switch() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Switch.prototype, "checked", {
         get: function () {
@@ -16,8 +16,8 @@ var Switch = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Switch.checkedProperty = new dependencyObservable.Property("checked", "Switch", new proxy.PropertyMetadata(false));
     return Switch;
 }(view.View));
+Switch.checkedProperty = new dependencyObservable.Property("checked", "Switch", new proxy.PropertyMetadata(false));
 exports.Switch = Switch;
 //# sourceMappingURL=switch-common.js.map

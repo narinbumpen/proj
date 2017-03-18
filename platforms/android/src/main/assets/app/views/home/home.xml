@@ -1,6 +1,17 @@
 <Page loaded="pageLoad">
-    <StackLayout>
-        <Label text="Login" />
-        
-    </StackLayout>
+  <ActionBar title="ระบบฐานข้อมูลบุคลากร" class="action-bar"></ActionBar>
+
+<StackLayout orientation="vertical">
+   <Image src="~/images/svclogo.png" stretch ="none" horizontalAlignment="center"></Image>
+    <Label text="กรอกข้อมูลเพื่อเข้าสู่ระบบ" horizontalAlignment="center" />
+      <TextField id="username" class="username" hint="ชื่อผู้ใช้" keyboardType="username" autocorrect="false" autocapitalizationType="none" 
+      text="{{ username }}"/>  
+     
+      <TextField id="password" hint="รหัสผ่าน" secure="true" 
+      text="{{ pass }}"/>  
+      
+      <Button text="คลิกเพื่อเข้าสู่ระบบ" tap="checkLogin"/>
+
+</StackLayout>
+
 </Page>

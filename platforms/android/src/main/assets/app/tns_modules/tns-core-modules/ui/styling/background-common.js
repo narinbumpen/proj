@@ -356,9 +356,9 @@ var Background = (function () {
     Background.prototype.toString = function () {
         return "isEmpty: " + this.isEmpty() + "; color: " + this.color + "; image: " + this.image + "; repeat: " + this.repeat + "; position: " + this.position + "; size: " + this.size + "; borderTopColor: " + this.borderTopColor + "; borderRightColor: " + this.borderRightColor + "; borderBottomColor: " + this.borderBottomColor + "; borderLeftColor: " + this.borderLeftColor + "; borderTopWidth: " + this.borderTopWidth + "; borderRightWidth: " + this.borderRightWidth + "; borderBottomWidth: " + this.borderBottomWidth + "; borderLeftWidth: " + this.borderLeftWidth + "; borderTopLeftRadius: " + this.borderTopLeftRadius + "; borderTopRightRadius: " + this.borderTopRightRadius + "; borderBottomRightRadius: " + this.borderBottomRightRadius + "; borderBottomLeftRadius: " + this.borderBottomLeftRadius + "; clipPath: " + this.clipPath + ";";
     };
-    Background.default = new Background();
     return Background;
 }());
+Background.default = new Background();
 exports.Background = Background;
 function cssValueToDevicePixels(source, total) {
     var result;

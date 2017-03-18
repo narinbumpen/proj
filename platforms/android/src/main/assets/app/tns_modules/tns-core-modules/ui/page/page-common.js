@@ -48,10 +48,11 @@ enableSwipeBackNavigationProperty.metadata.onSetNativeValue = enableSwipeBackNav
 var Page = (function (_super) {
     __extends(Page, _super);
     function Page() {
-        _super.call(this);
-        this._styleScope = new styleScope.StyleScope();
-        this._cssFiles = {};
-        this.actionBar = new action_bar_1.ActionBar();
+        var _this = _super.call(this) || this;
+        _this._styleScope = new styleScope.StyleScope();
+        _this._cssFiles = {};
+        _this.actionBar = new action_bar_1.ActionBar();
+        return _this;
     }
     Page.prototype.onLoaded = function () {
         this.style._setValue(style.backgroundColorProperty, "white", dependency_observable_1.ValueSource.Inherited);
@@ -346,18 +347,18 @@ var Page = (function (_super) {
         resetCssValuesFunc(this);
         view.eachDescendant(this, resetCssValuesFunc);
     };
-    Page.backgroundSpanUnderStatusBarProperty = backgroundSpanUnderStatusBarProperty;
-    Page.statusBarStyleProperty = statusBarStyleProperty;
-    Page.androidStatusBarBackgroundProperty = androidStatusBarBackgroundProperty;
-    Page.actionBarHiddenProperty = actionBarHiddenProperty;
-    Page.iosSwipeBackNavigationEnabledProperty = enableSwipeBackNavigationProperty;
-    Page.navigatingToEvent = "navigatingTo";
-    Page.navigatedToEvent = "navigatedTo";
-    Page.navigatingFromEvent = "navigatingFrom";
-    Page.navigatedFromEvent = "navigatedFrom";
-    Page.shownModallyEvent = "shownModally";
-    Page.showingModallyEvent = "showingModally";
     return Page;
 }(content_view_1.ContentView));
+Page.backgroundSpanUnderStatusBarProperty = backgroundSpanUnderStatusBarProperty;
+Page.statusBarStyleProperty = statusBarStyleProperty;
+Page.androidStatusBarBackgroundProperty = androidStatusBarBackgroundProperty;
+Page.actionBarHiddenProperty = actionBarHiddenProperty;
+Page.iosSwipeBackNavigationEnabledProperty = enableSwipeBackNavigationProperty;
+Page.navigatingToEvent = "navigatingTo";
+Page.navigatedToEvent = "navigatedTo";
+Page.navigatingFromEvent = "navigatingFrom";
+Page.navigatedFromEvent = "navigatedFrom";
+Page.shownModallyEvent = "shownModally";
+Page.showingModallyEvent = "showingModally";
 exports.Page = Page;
 //# sourceMappingURL=page-common.js.map

@@ -21,8 +21,9 @@ var defaultBindingSource = {};
 var Bindable = (function (_super) {
     __extends(Bindable, _super);
     function Bindable() {
-        _super.apply(this, arguments);
-        this.bindings = new Map();
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.bindings = new Map();
+        return _this;
     }
     Object.defineProperty(Bindable.prototype, "bindingContext", {
         get: function () {
@@ -80,7 +81,7 @@ var Bindable = (function (_super) {
         if (binding && !binding.updating) {
             if (binding.options.twoWay) {
                 if (trace.enabled) {
-                    trace.write((this + "._updateTwoWayBinding(" + property.name + ", " + newValue + ");") + property.name, trace.categories.Binding);
+                    trace.write(this + "._updateTwoWayBinding(" + property.name + ", " + newValue + ");" + property.name, trace.categories.Binding);
                 }
                 this._updateTwoWayBinding(property.name, newValue);
             }
@@ -114,9 +115,9 @@ var Bindable = (function (_super) {
             }
         });
     };
-    Bindable.bindingContextProperty = bindingContextProperty;
     return Bindable;
 }(dependency_observable_1.DependencyObservable));
+Bindable.bindingContextProperty = bindingContextProperty;
 exports.Bindable = Bindable;
 var emptyArray = [];
 function getProperties(property) {
@@ -232,7 +233,7 @@ var Binding = (function () {
     Binding.prototype.addPropertyChangeListeners = function (source, sourceProperty, parentProperies) {
         var objectsAndProperties = this.resolveObjectsAndProperties(source.get(), sourceProperty);
         var prop = parentProperies || "";
-        for (var i = 0, length = objectsAndProperties.length; i < length; i++) {
+        for (var i = 0, length_1 = objectsAndProperties.length; i < length_1; i++) {
             prop += "$" + objectsAndProperties[i].property;
             var currentObject = objectsAndProperties[i].instance;
             if (!this.propertyChangeListeners.has(prop) && currentObject instanceof observable_1.Observable) {

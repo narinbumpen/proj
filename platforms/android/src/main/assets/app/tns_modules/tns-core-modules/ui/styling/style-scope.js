@@ -263,7 +263,7 @@ function applyDescriptors(view, ruleset) {
     }); });
     var ruleAnimations = ruleset[animationsSymbol];
     if (ruleAnimations && view.isLoaded && view._nativeView !== undefined) {
-        var _loop_1 = function(animationInfo) {
+        var _loop_1 = function (animationInfo) {
             var animation = keyframeAnimation.KeyframeAnimation.keyframeAnimationFromInfo(animationInfo, modifier);
             if (animation) {
                 view._registerAnimation(animation);

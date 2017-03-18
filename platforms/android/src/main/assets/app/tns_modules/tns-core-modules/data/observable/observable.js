@@ -200,9 +200,9 @@ var Observable = (function () {
     Observable.prototype.toString = function () {
         return this.typeName;
     };
-    Observable.propertyChangeEvent = "propertyChange";
     return Observable;
 }());
+Observable.propertyChangeEvent = "propertyChange";
 exports.Observable = Observable;
 function addPropertiesFromObject(observable, source, recursive) {
     var isRecursive = recursive || false;

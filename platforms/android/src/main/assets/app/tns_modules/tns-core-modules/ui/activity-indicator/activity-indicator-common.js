@@ -5,7 +5,7 @@ var busyProperty = new dependency_observable_1.Property("busy", "ActivityIndicat
 var ActivityIndicator = (function (_super) {
     __extends(ActivityIndicator, _super);
     function ActivityIndicator() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ActivityIndicator.prototype, "busy", {
         get: function () {
@@ -17,8 +17,8 @@ var ActivityIndicator = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    ActivityIndicator.busyProperty = busyProperty;
     return ActivityIndicator;
 }(view_1.View));
+ActivityIndicator.busyProperty = busyProperty;
 exports.ActivityIndicator = ActivityIndicator;
 //# sourceMappingURL=activity-indicator-common.js.map

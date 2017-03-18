@@ -21,7 +21,7 @@ special_properties_1.registerSpecialProperty("dock", function (instance, propert
 var DockLayout = (function (_super) {
     __extends(DockLayout, _super);
     function DockLayout() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     DockLayout.onDockPropertyChanged = function (data) {
         var view = data.object;
@@ -50,9 +50,9 @@ var DockLayout = (function (_super) {
     });
     DockLayout.prototype.onDockChanged = function (view, oldValue, newValue) {
     };
-    DockLayout.dockProperty = new dependency_observable_1.Property("dock", "DockLayout", new proxy_1.PropertyMetadata(enums_1.Dock.left, undefined, DockLayout.onDockPropertyChanged, isDockValid));
-    DockLayout.stretchLastChildProperty = new dependency_observable_1.Property("stretchLastChild", "DockLayout", new proxy_1.PropertyMetadata(true, AffectsLayout));
     return DockLayout;
 }(layout_base_1.LayoutBase));
+DockLayout.dockProperty = new dependency_observable_1.Property("dock", "DockLayout", new proxy_1.PropertyMetadata(enums_1.Dock.left, undefined, DockLayout.onDockPropertyChanged, isDockValid));
+DockLayout.stretchLastChildProperty = new dependency_observable_1.Property("stretchLastChild", "DockLayout", new proxy_1.PropertyMetadata(true, AffectsLayout));
 exports.DockLayout = DockLayout;
 //# sourceMappingURL=dock-layout-common.js.map

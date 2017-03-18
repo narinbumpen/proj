@@ -162,8 +162,9 @@ var xml2ui;
     var XmlStringParser = (function (_super) {
         __extends(XmlStringParser, _super);
         function XmlStringParser(error) {
-            _super.call(this);
-            this.error = error || PositionErrorFormat;
+            var _this = _super.call(this) || this;
+            _this.error = error || PositionErrorFormat;
+            return _this;
         }
         XmlStringParser.prototype.parse = function (value) {
             var _this = this;
@@ -208,7 +209,7 @@ var xml2ui;
     var PlatformFilter = (function (_super) {
         __extends(PlatformFilter, _super);
         function PlatformFilter() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         PlatformFilter.prototype.parse = function (args) {
             if (args.eventType === xml.ParserEventType.StartElement) {
@@ -244,9 +245,10 @@ var xml2ui;
     var XmlArgsReplay = (function (_super) {
         __extends(XmlArgsReplay, _super);
         function XmlArgsReplay(args, errorFormat) {
-            _super.call(this);
-            this.args = args;
-            this.error = errorFormat;
+            var _this = _super.call(this) || this;
+            _this.args = args;
+            _this.error = errorFormat;
+            return _this;
         }
         XmlArgsReplay.prototype.replay = function () {
             var _this = this;
@@ -357,8 +359,8 @@ var xml2ui;
                 return childParser;
             }
             if (args.eventType === xml.ParserEventType.EndElement) {
-                var name = ComponentParser.getComplexPropertyName(args.elementName);
-                if (name === this.templateProperty.name) {
+                var name_1 = ComponentParser.getComplexPropertyName(args.elementName);
+                if (name_1 === this.templateProperty.name) {
                     var templates = new Array();
                     for (var i = 0; i < this._childParsers.length; i++) {
                         templates.push({
@@ -500,11 +502,11 @@ var xml2ui;
         ComponentParser.isKnownCollection = function (name, context) {
             return ComponentParser.KNOWNCOLLECTIONS in context && context[ComponentParser.KNOWNCOLLECTIONS] && name in context[ComponentParser.KNOWNCOLLECTIONS];
         };
-        ComponentParser.KNOWNCOLLECTIONS = "knownCollections";
-        ComponentParser.KNOWNTEMPLATES = "knownTemplates";
-        ComponentParser.KNOWNMULTITEMPLATES = "knownMultiTemplates";
         return ComponentParser;
     }());
+    ComponentParser.KNOWNCOLLECTIONS = "knownCollections";
+    ComponentParser.KNOWNTEMPLATES = "knownTemplates";
+    ComponentParser.KNOWNMULTITEMPLATES = "knownMultiTemplates";
     xml2ui.ComponentParser = ComponentParser;
 })(xml2ui || (xml2ui = {}));
 //# sourceMappingURL=builder.js.map

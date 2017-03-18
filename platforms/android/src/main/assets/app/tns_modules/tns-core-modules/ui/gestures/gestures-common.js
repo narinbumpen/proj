@@ -1,4 +1,5 @@
 var definition = require("ui/gestures");
+var GestureTypes;
 (function (GestureTypes) {
     GestureTypes[GestureTypes["tap"] = 1] = "tap";
     GestureTypes[GestureTypes["doubleTap"] = 2] = "doubleTap";
@@ -8,22 +9,21 @@ var definition = require("ui/gestures");
     GestureTypes[GestureTypes["rotation"] = 32] = "rotation";
     GestureTypes[GestureTypes["longPress"] = 64] = "longPress";
     GestureTypes[GestureTypes["touch"] = 128] = "touch";
-})(exports.GestureTypes || (exports.GestureTypes = {}));
-var GestureTypes = exports.GestureTypes;
+})(GestureTypes = exports.GestureTypes || (exports.GestureTypes = {}));
+var GestureStateTypes;
 (function (GestureStateTypes) {
     GestureStateTypes[GestureStateTypes["cancelled"] = 0] = "cancelled";
     GestureStateTypes[GestureStateTypes["began"] = 1] = "began";
     GestureStateTypes[GestureStateTypes["changed"] = 2] = "changed";
     GestureStateTypes[GestureStateTypes["ended"] = 3] = "ended";
-})(exports.GestureStateTypes || (exports.GestureStateTypes = {}));
-var GestureStateTypes = exports.GestureStateTypes;
+})(GestureStateTypes = exports.GestureStateTypes || (exports.GestureStateTypes = {}));
+var SwipeDirection;
 (function (SwipeDirection) {
     SwipeDirection[SwipeDirection["right"] = 1] = "right";
     SwipeDirection[SwipeDirection["left"] = 2] = "left";
     SwipeDirection[SwipeDirection["up"] = 4] = "up";
     SwipeDirection[SwipeDirection["down"] = 8] = "down";
-})(exports.SwipeDirection || (exports.SwipeDirection = {}));
-var SwipeDirection = exports.SwipeDirection;
+})(SwipeDirection = exports.SwipeDirection || (exports.SwipeDirection = {}));
 var TouchAction;
 (function (TouchAction) {
     TouchAction.down = "down";

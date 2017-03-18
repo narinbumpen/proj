@@ -3,7 +3,7 @@ var utils = require("utils/utils");
 var ContentView = (function (_super) {
     __extends(ContentView, _super);
     function ContentView() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ContentView.prototype, "content", {
         get: function () {

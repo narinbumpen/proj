@@ -118,10 +118,11 @@ function pageFromBuilder(moduleNamePath, moduleExports) {
 var Frame = (function (_super) {
     __extends(Frame, _super);
     function Frame() {
-        _super.call(this);
-        this._isInFrameStack = false;
-        this._backStack = new Array();
-        this._navigationQueue = new Array();
+        var _this = _super.call(this) || this;
+        _this._isInFrameStack = false;
+        _this._backStack = new Array();
+        _this._navigationQueue = new Array();
+        return _this;
     }
     Frame.prototype.canGoBack = function () {
         return this._backStack.length > 0;
@@ -405,10 +406,10 @@ var Frame = (function (_super) {
         }
         return result;
     };
-    Frame.androidOptionSelectedEvent = "optionSelected";
-    Frame.defaultAnimatedNavigation = true;
     return Frame;
 }(view_1.CustomLayoutView));
+Frame.androidOptionSelectedEvent = "optionSelected";
+Frame.defaultAnimatedNavigation = true;
 exports.Frame = Frame;
 var _topmost = function () {
     if (frameStack.length > 0) {

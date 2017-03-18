@@ -42,7 +42,7 @@ exports.hintProperty.metadata.onSetNativeValue = onHintPropertyChanged;
 var EditableTextBase = (function (_super) {
     __extends(EditableTextBase, _super);
     function EditableTextBase() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(EditableTextBase.prototype, "keyboardType", {
         get: function () {
@@ -128,14 +128,14 @@ var EditableTextBase = (function (_super) {
     };
     EditableTextBase.prototype._onHintPropertyChanged = function (data) {
     };
-    EditableTextBase.keyboardTypeProperty = keyboardTypeProperty;
-    EditableTextBase.returnKeyTypeProperty = returnKeyTypeProperty;
-    EditableTextBase.editableProperty = editableProperty;
-    EditableTextBase.updateTextTriggerProperty = updateTextTriggerProperty;
-    EditableTextBase.autocapitalizationTypeProperty = autocapitalizationTypeProperty;
-    EditableTextBase.autocorrectProperty = autocorrectProperty;
-    EditableTextBase.hintProperty = exports.hintProperty;
     return EditableTextBase;
 }(textBase.TextBase));
+EditableTextBase.keyboardTypeProperty = keyboardTypeProperty;
+EditableTextBase.returnKeyTypeProperty = returnKeyTypeProperty;
+EditableTextBase.editableProperty = editableProperty;
+EditableTextBase.updateTextTriggerProperty = updateTextTriggerProperty;
+EditableTextBase.autocapitalizationTypeProperty = autocapitalizationTypeProperty;
+EditableTextBase.autocorrectProperty = autocorrectProperty;
+EditableTextBase.hintProperty = exports.hintProperty;
 exports.EditableTextBase = EditableTextBase;
 //# sourceMappingURL=editable-text-base-common.js.map

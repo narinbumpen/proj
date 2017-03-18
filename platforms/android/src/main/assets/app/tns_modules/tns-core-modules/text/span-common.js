@@ -5,7 +5,7 @@ var enums = require("ui/enums");
 var Span = (function (_super) {
     __extends(Span, _super);
     function Span() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Span.prototype, "fontFamily", {
         get: function () {

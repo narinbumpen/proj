@@ -5,8 +5,9 @@ var observable = require("data/observable");
 var PropertyMetadata = (function (_super) {
     __extends(PropertyMetadata, _super);
     function PropertyMetadata(defaultValue, options, onChanged, onValidateValue, onSetNativeValue) {
-        _super.call(this, defaultValue, options, onChanged, onValidateValue);
-        this._onSetNativeValue = onSetNativeValue;
+        var _this = _super.call(this, defaultValue, options, onChanged, onValidateValue) || this;
+        _this._onSetNativeValue = onSetNativeValue;
+        return _this;
     }
     Object.defineProperty(PropertyMetadata.prototype, "onSetNativeValue", {
         get: function () {
@@ -24,8 +25,9 @@ exports.PropertyMetadata = PropertyMetadata;
 var ProxyObject = (function (_super) {
     __extends(ProxyObject, _super);
     function ProxyObject() {
-        _super.apply(this, arguments);
-        this._updatingJSPropertiesDict = {};
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._updatingJSPropertiesDict = {};
+        return _this;
     }
     Object.defineProperty(ProxyObject.prototype, "android", {
         get: function () {

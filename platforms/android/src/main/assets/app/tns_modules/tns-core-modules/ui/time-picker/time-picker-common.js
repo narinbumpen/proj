@@ -145,7 +145,7 @@ function onMinuteIntervalPropertyChanged(data) {
 var TimePicker = (function (_super) {
     __extends(TimePicker, _super);
     function TimePicker() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(TimePicker.prototype, "hour", {
         get: function () {
@@ -235,15 +235,15 @@ var TimePicker = (function (_super) {
     };
     TimePicker.prototype._setNativeMinuteIntervalTime = function () {
     };
-    TimePicker.hourProperty = new dependencyObservable.Property("hour", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onHourPropertyChanged, isHourValid));
-    TimePicker.minHourProperty = new dependencyObservable.Property("minHour", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinHourPropertyChanged, isHourValid));
-    TimePicker.maxHourProperty = new dependencyObservable.Property("maxHour", "TimePicker", new proxy.PropertyMetadata(23, dependencyObservable.PropertyMetadataSettings.None, onMaxHourPropertyChanged, isHourValid));
-    TimePicker.minuteProperty = new dependencyObservable.Property("minute", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinutePropertyChanged, isMinuteValid));
-    TimePicker.minMinuteProperty = new dependencyObservable.Property("minMinute", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinMinutePropertyChanged, isMinuteValid));
-    TimePicker.maxMinuteProperty = new dependencyObservable.Property("maxMinute", "TimePicker", new proxy.PropertyMetadata(59, dependencyObservable.PropertyMetadataSettings.None, onMaxMinutePropertyChanged, isMinuteValid));
-    TimePicker.minuteIntervalProperty = new dependencyObservable.Property("minuteInterval", "TimePicker", new proxy.PropertyMetadata(1, dependencyObservable.PropertyMetadataSettings.None, onMinuteIntervalPropertyChanged, isMinuteIntervalValid));
-    TimePicker.timeProperty = new dependencyObservable.Property("time", "TimePicker", new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onTimePropertyChanged, isValidTime));
     return TimePicker;
 }(view.View));
+TimePicker.hourProperty = new dependencyObservable.Property("hour", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onHourPropertyChanged, isHourValid));
+TimePicker.minHourProperty = new dependencyObservable.Property("minHour", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinHourPropertyChanged, isHourValid));
+TimePicker.maxHourProperty = new dependencyObservable.Property("maxHour", "TimePicker", new proxy.PropertyMetadata(23, dependencyObservable.PropertyMetadataSettings.None, onMaxHourPropertyChanged, isHourValid));
+TimePicker.minuteProperty = new dependencyObservable.Property("minute", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinutePropertyChanged, isMinuteValid));
+TimePicker.minMinuteProperty = new dependencyObservable.Property("minMinute", "TimePicker", new proxy.PropertyMetadata(0, dependencyObservable.PropertyMetadataSettings.None, onMinMinutePropertyChanged, isMinuteValid));
+TimePicker.maxMinuteProperty = new dependencyObservable.Property("maxMinute", "TimePicker", new proxy.PropertyMetadata(59, dependencyObservable.PropertyMetadataSettings.None, onMaxMinutePropertyChanged, isMinuteValid));
+TimePicker.minuteIntervalProperty = new dependencyObservable.Property("minuteInterval", "TimePicker", new proxy.PropertyMetadata(1, dependencyObservable.PropertyMetadataSettings.None, onMinuteIntervalPropertyChanged, isMinuteIntervalValid));
+TimePicker.timeProperty = new dependencyObservable.Property("time", "TimePicker", new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onTimePropertyChanged, isValidTime));
 exports.TimePicker = TimePicker;
 //# sourceMappingURL=time-picker-common.js.map

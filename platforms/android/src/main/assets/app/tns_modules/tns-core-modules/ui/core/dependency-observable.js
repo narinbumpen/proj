@@ -108,8 +108,9 @@ exports.PropertyEntry = PropertyEntry;
 var DependencyObservable = (function (_super) {
     __extends(DependencyObservable, _super);
     function DependencyObservable() {
-        _super.apply(this, arguments);
-        this._propertyEntries = {};
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._propertyEntries = {};
+        return _this;
     }
     DependencyObservable.prototype.set = function (name, value) {
         var property = getPropertyByNameAndType(name, this);

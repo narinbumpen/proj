@@ -28,11 +28,12 @@ var styleHandlersInitialized;
 var TextBase = (function (_super) {
     __extends(TextBase, _super);
     function TextBase() {
-        _super.call(this);
+        var _this = _super.call(this) || this;
         if (!styleHandlersInitialized) {
             styleHandlersInitialized = true;
             tbs.TextBaseStyler.registerHandlers();
         }
+        return _this;
     }
     TextBase.prototype._onBindingContextChanged = function (oldValue, newValue) {
         _super.prototype._onBindingContextChanged.call(this, oldValue, newValue);
@@ -115,9 +116,9 @@ var TextBase = (function (_super) {
     TextBase.prototype._requestLayoutOnTextChanged = function () {
         this.requestLayout();
     };
-    TextBase.textProperty = textProperty;
-    TextBase.formattedTextProperty = formattedTextProperty;
     return TextBase;
 }(view.View));
+TextBase.textProperty = textProperty;
+TextBase.formattedTextProperty = formattedTextProperty;
 exports.TextBase = TextBase;
 //# sourceMappingURL=text-base-common.js.map

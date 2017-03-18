@@ -13,7 +13,7 @@ var FLEX_SHRINK_DEFAULT = 1.0;
 function makeValidator() {
     var values = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        values[_i - 0] = arguments[_i];
+        values[_i] = arguments[_i];
     }
     var set = new Set(values);
     return function (value) { return set.has(value); };
@@ -140,7 +140,7 @@ function validateArgs(element) {
 var FlexboxLayoutBase = (function (_super) {
     __extends(FlexboxLayoutBase, _super);
     function FlexboxLayoutBase() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     Object.defineProperty(FlexboxLayoutBase.prototype, "flexDirection", {
         get: function () {

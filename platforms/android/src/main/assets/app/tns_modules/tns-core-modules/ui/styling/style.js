@@ -23,24 +23,24 @@ var AffectsLayout = platform.device.os === platform.platformNames.android ? depe
 function parseMargin(value) {
     if (types.isString(value)) {
         var arr = value.split(/[ ,]+/);
-        var top = void 0;
+        var top_1;
         var right = void 0;
         var bottom = void 0;
         var left = void 0;
         if (arr.length === 1) {
-            top = right = bottom = left = arr[0];
+            top_1 = right = bottom = left = arr[0];
         }
         else if (arr.length === 2) {
-            top = bottom = arr[0];
+            top_1 = bottom = arr[0];
             right = left = arr[1];
         }
         else if (arr.length === 3) {
-            top = arr[0];
+            top_1 = arr[0];
             right = left = arr[1];
             bottom = arr[2];
         }
         else if (arr.length === 4) {
-            top = arr[0];
+            top_1 = arr[0];
             right = arr[1];
             bottom = arr[2];
             left = arr[3];
@@ -49,7 +49,7 @@ function parseMargin(value) {
             throw new Error("Invalid value for margin: " + value);
         }
         return {
-            top: top,
+            top: top_1,
             right: right,
             bottom: bottom,
             left: left
@@ -309,10 +309,11 @@ function onFontSizeChanged(data) {
 var Style = (function (_super) {
     __extends(Style, _super);
     function Style(parentView) {
-        _super.call(this);
-        this._updateCounter = 0;
-        this._nativeSetters = new Map();
-        this._view = parentView;
+        var _this = _super.call(this) || this;
+        _this._updateCounter = 0;
+        _this._nativeSetters = new Map();
+        _this._view = parentView;
+        return _this;
     }
     Object.defineProperty(Style.prototype, "rotate", {
         get: function () {

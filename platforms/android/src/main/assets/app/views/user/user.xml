@@ -1,0 +1,11 @@
+<Page loaded="pageLoad">
+  <ActionBar title="ระบบฐานข้อมูลบุคลากร" class="action-bar"></ActionBar>
+
+<StackLayout orientation="vertical">
+   <Image src="~/images/user.jpg" stretch ="none" horizontalAlignment="center"></Image>
+      
+    <Button text="ข้อมูลส่วนตัว" tap="goProfile"/>
+    <Button text="ทำแบบรายงาน" tap="goReport"/>
+    <Button text="ออกจากระบบ" tap="checkLogout"/>
+</StackLayout>
+</Page>

@@ -12,10 +12,11 @@ var CHILD_FORMATTED_STRING = "FormattedString";
 var FormattedString = (function (_super) {
     __extends(FormattedString, _super);
     function FormattedString() {
-        _super.call(this);
-        this._spans = new observableArray.ObservableArray();
-        this._spans.addEventListener(observableArray.ObservableArray.changeEvent, this.onSpansCollectionChanged, this);
-        this._isDirty = true;
+        var _this = _super.call(this) || this;
+        _this._spans = new observableArray.ObservableArray();
+        _this._spans.addEventListener(observableArray.ObservableArray.changeEvent, _this.onSpansCollectionChanged, _this);
+        _this._isDirty = true;
+        return _this;
     }
     Object.defineProperty(FormattedString.prototype, "parent", {
         get: function () {

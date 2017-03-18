@@ -74,10 +74,11 @@ exports.eachInheritableProperty = eachInheritableProperty;
 var Property = (function (_super) {
     __extends(Property, _super);
     function Property(name, cssName, metadata, valueConverter) {
-        _super.call(this, name, "Style", metadata, valueConverter);
-        this.cssName = cssName;
-        this.cssName = cssName;
-        registerProperty(this);
+        var _this = _super.call(this, name, "Style", metadata, valueConverter) || this;
+        _this.cssName = cssName;
+        _this.cssName = cssName;
+        registerProperty(_this);
+        return _this;
     }
     return Property;
 }(observable.Property));

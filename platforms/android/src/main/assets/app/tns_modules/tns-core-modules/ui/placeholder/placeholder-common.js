@@ -2,10 +2,10 @@ var view = require("ui/core/view");
 var Placeholder = (function (_super) {
     __extends(Placeholder, _super);
     function Placeholder() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Placeholder.creatingViewEvent = "creatingView";
     return Placeholder;
 }(view.View));
+Placeholder.creatingViewEvent = "creatingView";
 exports.Placeholder = Placeholder;
 //# sourceMappingURL=placeholder-common.js.map

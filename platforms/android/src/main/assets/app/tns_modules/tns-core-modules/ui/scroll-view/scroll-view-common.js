@@ -9,8 +9,9 @@ exports.orientationProperty = new dependencyObservable.Property("orientation", "
 var ScrollView = (function (_super) {
     __extends(ScrollView, _super);
     function ScrollView() {
-        _super.apply(this, arguments);
-        this._scrollChangeCount = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._scrollChangeCount = 0;
+        return _this;
     }
     Object.defineProperty(ScrollView.prototype, "orientation", {
         get: function () {
@@ -90,8 +91,8 @@ var ScrollView = (function (_super) {
     };
     ScrollView.prototype.scrollToHorizontalOffset = function (value, animated) {
     };
-    ScrollView.scrollEvent = "scroll";
     return ScrollView;
 }(contentView.ContentView));
+ScrollView.scrollEvent = "scroll";
 exports.ScrollView = ScrollView;
 //# sourceMappingURL=scroll-view-common.js.map

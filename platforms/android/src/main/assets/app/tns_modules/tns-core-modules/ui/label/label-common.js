@@ -3,7 +3,7 @@ var enums_1 = require("ui/enums");
 var Label = (function (_super) {
     __extends(Label, _super);
     function Label() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Label.prototype, "textWrap", {
         get: function () {

@@ -13,7 +13,7 @@ function isValidOrientation(value) {
 var WrapLayout = (function (_super) {
     __extends(WrapLayout, _super);
     function WrapLayout() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(WrapLayout.prototype, "orientation", {
         get: function () {
@@ -45,10 +45,10 @@ var WrapLayout = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    WrapLayout.orientationProperty = new dependency_observable_1.Property("orientation", "WrapLayout", new proxy_1.PropertyMetadata(enums_1.Orientation.horizontal, AffectsLayout, undefined, isValidOrientation));
-    WrapLayout.itemWidthProperty = new dependency_observable_1.Property("itemWidth", "WrapLayout", new proxy_1.PropertyMetadata(0, AffectsLayout, undefined, isWidthHeightValid));
-    WrapLayout.itemHeightProperty = new dependency_observable_1.Property("itemHeight", "WrapLayout", new proxy_1.PropertyMetadata(0, AffectsLayout, undefined, isWidthHeightValid));
     return WrapLayout;
 }(layout_base_1.LayoutBase));
+WrapLayout.orientationProperty = new dependency_observable_1.Property("orientation", "WrapLayout", new proxy_1.PropertyMetadata(enums_1.Orientation.horizontal, AffectsLayout, undefined, isValidOrientation));
+WrapLayout.itemWidthProperty = new dependency_observable_1.Property("itemWidth", "WrapLayout", new proxy_1.PropertyMetadata(0, AffectsLayout, undefined, isWidthHeightValid));
+WrapLayout.itemHeightProperty = new dependency_observable_1.Property("itemHeight", "WrapLayout", new proxy_1.PropertyMetadata(0, AffectsLayout, undefined, isWidthHeightValid));
 exports.WrapLayout = WrapLayout;
 //# sourceMappingURL=wrap-layout-common.js.map

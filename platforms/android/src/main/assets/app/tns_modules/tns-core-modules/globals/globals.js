@@ -108,7 +108,7 @@ function Deprecated(target, key, descriptor) {
         descriptor.value = function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log(key + " is deprecated");
             return originalMethod.apply(this, args);
@@ -128,7 +128,7 @@ function Experimental(target, key, descriptor) {
         descriptor.value = function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log(key + " is experimental");
             return originalMethod.apply(this, args);

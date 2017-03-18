@@ -4,7 +4,7 @@ var layout_base_1 = require("ui/layouts/layout-base");
 var ProxyViewContainer = (function (_super) {
     __extends(ProxyViewContainer, _super);
     function ProxyViewContainer() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ProxyViewContainer.prototype, "ios", {
         get: function () {

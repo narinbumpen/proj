@@ -104,9 +104,9 @@ var Font = (function () {
         size = !!size ? size : undefined;
         return new Font(parsed.fontFamily, size, parsed.fontStyle, parsed.fontWeight);
     };
-    Font.default = undefined;
     return Font;
 }());
+Font.default = undefined;
 exports.Font = Font;
 function parseFontFamily(value) {
     var result = new Array();

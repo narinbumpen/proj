@@ -5,7 +5,7 @@ var types = require("utils/types");
 var Border = (function (_super) {
     __extends(Border, _super);
     function Border() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Border.prototype, "cornerRadius", {
         get: function () {
@@ -45,10 +45,10 @@ var Border = (function (_super) {
         var borderSize = borderWidth * density;
         viewModule.View.layoutChild(this, this.layoutView, borderSize, borderSize, right - left - borderSize, bottom - top - borderSize);
     };
-    Border = __decorate([
-        Deprecated
-    ], Border);
     return Border;
 }(contentView.ContentView));
+Border = __decorate([
+    Deprecated
+], Border);
 exports.Border = Border;
 //# sourceMappingURL=border.js.map

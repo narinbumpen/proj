@@ -38,11 +38,11 @@ special_properties_1.registerSpecialProperty("rowSpan", function (instance, prop
 var ItemSpec = (function (_super) {
     __extends(ItemSpec, _super);
     function ItemSpec() {
-        _super.call(this);
-        this._actualLength = 0;
+        var _this = _super.call(this) || this;
+        _this._actualLength = 0;
         if (arguments.length === 0) {
-            this._value = 1;
-            this._unitType = GridUnitType.star;
+            _this._value = 1;
+            _this._unitType = GridUnitType.star;
         }
         else if (arguments.length === 2) {
             ensureTypes();
@@ -50,8 +50,8 @@ var ItemSpec = (function (_super) {
                 if (arguments[0] < 0 || (arguments[1] !== GridUnitType.auto && arguments[1] !== GridUnitType.star && arguments[1] !== GridUnitType.pixel)) {
                     throw new Error("Invalid values.");
                 }
-                this._value = arguments[0];
-                this._unitType = arguments[1];
+                _this._value = arguments[0];
+                _this._unitType = arguments[1];
             }
             else {
                 throw new Error("Arguments must be number and string.");
@@ -60,7 +60,8 @@ var ItemSpec = (function (_super) {
         else {
             throw new Error("ItemSpec expects 0 or 2 arguments");
         }
-        this.index = -1;
+        _this.index = -1;
+        return _this;
     }
     ItemSpec.create = function (value, type) {
         var spec = new ItemSpec();
@@ -122,9 +123,10 @@ exports.ItemSpec = ItemSpec;
 var GridLayout = (function (_super) {
     __extends(GridLayout, _super);
     function GridLayout() {
-        _super.apply(this, arguments);
-        this._rows = new Array();
-        this._cols = new Array();
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._rows = new Array();
+        _this._cols = new Array();
+        return _this;
     }
     GridLayout.getColumn = function (element) {
         return validateArgs(element)._getValue(GridLayout.columnProperty);
@@ -344,11 +346,11 @@ var GridLayout = (function (_super) {
             this.addRow(rows[i]);
         }
     };
-    GridLayout.columnProperty = new dependency_observable_1.Property("Column", "GridLayout", new proxy_1.PropertyMetadata(0, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onColumnPropertyChanged, numberUtils.notNegative));
-    GridLayout.columnSpanProperty = new dependency_observable_1.Property("ColumnSpan", "GridLayout", new proxy_1.PropertyMetadata(1, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onColumnSpanPropertyChanged, numberUtils.greaterThanZero));
-    GridLayout.rowProperty = new dependency_observable_1.Property("Row", "GridLayout", new proxy_1.PropertyMetadata(0, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onRowPropertyChanged, numberUtils.notNegative));
-    GridLayout.rowSpanProperty = new dependency_observable_1.Property("RowSpan", "GridLayout", new proxy_1.PropertyMetadata(1, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onRowSpanPropertyChanged, numberUtils.greaterThanZero));
     return GridLayout;
 }(layout_base_1.LayoutBase));
+GridLayout.columnProperty = new dependency_observable_1.Property("Column", "GridLayout", new proxy_1.PropertyMetadata(0, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onColumnPropertyChanged, numberUtils.notNegative));
+GridLayout.columnSpanProperty = new dependency_observable_1.Property("ColumnSpan", "GridLayout", new proxy_1.PropertyMetadata(1, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onColumnSpanPropertyChanged, numberUtils.greaterThanZero));
+GridLayout.rowProperty = new dependency_observable_1.Property("Row", "GridLayout", new proxy_1.PropertyMetadata(0, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onRowPropertyChanged, numberUtils.notNegative));
+GridLayout.rowSpanProperty = new dependency_observable_1.Property("RowSpan", "GridLayout", new proxy_1.PropertyMetadata(1, dependency_observable_1.PropertyMetadataSettings.None, GridLayout.onRowSpanPropertyChanged, numberUtils.greaterThanZero));
 exports.GridLayout = GridLayout;
 //# sourceMappingURL=grid-layout-common.js.map

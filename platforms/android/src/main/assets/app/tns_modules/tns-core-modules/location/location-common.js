@@ -3,11 +3,11 @@ var defaultGetLocationTimeout = 20000;
 var Location = (function () {
     function Location() {
     }
-    Location = __decorate([
-        Deprecated
-    ], Location);
     return Location;
 }());
+Location = __decorate([
+    Deprecated
+], Location);
 exports.Location = Location;
 exports.getLocation = function (options) {
     var timerId;

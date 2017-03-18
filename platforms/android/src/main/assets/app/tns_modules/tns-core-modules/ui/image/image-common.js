@@ -23,7 +23,7 @@ function onSrcPropertyChanged(data) {
 var Image = (function (_super) {
     __extends(Image, _super);
     function Image() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(Image.prototype, "imageSource", {
         get: function () {
@@ -161,12 +161,12 @@ var Image = (function (_super) {
             this._setValue(Image.isLoadingProperty, false);
         }
     };
-    Image.srcProperty = new dependencyObservable.Property(SRC, IMAGE, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onSrcPropertyChanged));
-    Image.imageSourceProperty = new dependencyObservable.Property(IMAGE_SOURCE, IMAGE, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None));
-    Image.isLoadingProperty = new dependencyObservable.Property(ISLOADING, IMAGE, new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.None));
-    Image.stretchProperty = new dependencyObservable.Property(STRETCH, IMAGE, new proxy.PropertyMetadata(enums.Stretch.aspectFit, AffectsLayout));
-    Image.loadModeProperty = new dependencyObservable.Property(LOAD_MODE, IMAGE, new proxy.PropertyMetadata(SYNC, 0, null, function (value) { return value === SYNC || value === ASYNC; }, null));
     return Image;
 }(view.View));
+Image.srcProperty = new dependencyObservable.Property(SRC, IMAGE, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onSrcPropertyChanged));
+Image.imageSourceProperty = new dependencyObservable.Property(IMAGE_SOURCE, IMAGE, new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None));
+Image.isLoadingProperty = new dependencyObservable.Property(ISLOADING, IMAGE, new proxy.PropertyMetadata(false, dependencyObservable.PropertyMetadataSettings.None));
+Image.stretchProperty = new dependencyObservable.Property(STRETCH, IMAGE, new proxy.PropertyMetadata(enums.Stretch.aspectFit, AffectsLayout));
+Image.loadModeProperty = new dependencyObservable.Property(LOAD_MODE, IMAGE, new proxy.PropertyMetadata(SYNC, 0, null, function (value) { return value === SYNC || value === ASYNC; }, null));
 exports.Image = Image;
 //# sourceMappingURL=image-common.js.map

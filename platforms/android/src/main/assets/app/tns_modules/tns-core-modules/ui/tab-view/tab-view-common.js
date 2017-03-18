@@ -10,8 +10,9 @@ exports.traceCategory = "TabView";
 var TabViewItem = (function (_super) {
     __extends(TabViewItem, _super);
     function TabViewItem() {
-        _super.apply(this, arguments);
-        this._title = "";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._title = "";
+        return _this;
     }
     Object.defineProperty(TabViewItem.prototype, "title", {
         get: function () {
@@ -79,7 +80,7 @@ itemsProperty.metadata.onSetNativeValue = function (data) {
 var TabView = (function (_super) {
     __extends(TabView, _super);
     function TabView() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     TabView.prototype._addArrayFromBuilder = function (name, value) {
         if (name === ITEMS) {
@@ -336,10 +337,10 @@ var TabView = (function (_super) {
     };
     TabView.prototype._updateIOSTabBarColorsAndFonts = function () {
     };
-    TabView.itemsProperty = itemsProperty;
-    TabView.selectedIndexProperty = selectedIndexProperty;
-    TabView.selectedIndexChangedEvent = "selectedIndexChanged";
     return TabView;
 }(view_1.View));
+TabView.itemsProperty = itemsProperty;
+TabView.selectedIndexProperty = selectedIndexProperty;
+TabView.selectedIndexChangedEvent = "selectedIndexChanged";
 exports.TabView = TabView;
 //# sourceMappingURL=tab-view-common.js.map

@@ -7,7 +7,7 @@ var AffectsLayout = platform_1.isAndroid ? dependency_observable_1.PropertyMetad
 var SearchBar = (function (_super) {
     __extends(SearchBar, _super);
     function SearchBar() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(SearchBar.prototype, "text", {
         get: function () {
@@ -51,13 +51,13 @@ var SearchBar = (function (_super) {
     });
     SearchBar.prototype.dismissSoftInput = function () {
     };
-    SearchBar.submitEvent = "submit";
-    SearchBar.clearEvent = "clear";
-    SearchBar.textFieldBackgroundColorProperty = new dependency_observable_1.Property("textFieldBackgroundColor", "SearchBar", new proxy_1.PropertyMetadata(undefined));
-    SearchBar.textFieldHintColorProperty = new dependency_observable_1.Property("textFieldHintColor", "SearchBar", new proxy_1.PropertyMetadata(undefined));
-    SearchBar.hintProperty = new dependency_observable_1.Property("hint", "SearchBar", new proxy_1.PropertyMetadata(""));
-    SearchBar.textProperty = new dependency_observable_1.Property("text", "SearchBar", new proxy_1.PropertyMetadata("", AffectsLayout));
     return SearchBar;
 }(view_1.View));
+SearchBar.submitEvent = "submit";
+SearchBar.clearEvent = "clear";
+SearchBar.textFieldBackgroundColorProperty = new dependency_observable_1.Property("textFieldBackgroundColor", "SearchBar", new proxy_1.PropertyMetadata(undefined));
+SearchBar.textFieldHintColorProperty = new dependency_observable_1.Property("textFieldHintColor", "SearchBar", new proxy_1.PropertyMetadata(undefined));
+SearchBar.hintProperty = new dependency_observable_1.Property("hint", "SearchBar", new proxy_1.PropertyMetadata(""));
+SearchBar.textProperty = new dependency_observable_1.Property("text", "SearchBar", new proxy_1.PropertyMetadata("", AffectsLayout));
 exports.SearchBar = SearchBar;
 //# sourceMappingURL=search-bar-common.js.map

@@ -30,7 +30,7 @@ formattedTextProperty.metadata.onSetNativeValue = onFormattedTextPropertyChanged
 var Button = (function (_super) {
     __extends(Button, _super);
     function Button() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype._onBindingContextChanged = function (oldValue, newValue) {
         _super.prototype._onBindingContextChanged.call(this, oldValue, newValue);
@@ -110,12 +110,12 @@ var Button = (function (_super) {
     Button.prototype._addChildFromBuilder = function (name, value) {
         formattedString.FormattedString.addFormattedStringToView(this, name, value);
     };
-    Button.tapEvent = "tap";
-    Button.textProperty = textProperty;
-    Button.formattedTextProperty = formattedTextProperty;
-    Button.textWrapProperty = textWrapProperty;
     return Button;
 }(view.View));
+Button.tapEvent = "tap";
+Button.textProperty = textProperty;
+Button.formattedTextProperty = formattedTextProperty;
+Button.textWrapProperty = textWrapProperty;
 exports.Button = Button;
 function onTextWrapPropertyChanged(data) {
     var v = data.object;

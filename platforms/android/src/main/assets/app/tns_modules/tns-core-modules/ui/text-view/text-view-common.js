@@ -4,7 +4,7 @@ global.moduleMerge(textBase, exports);
 var TextView = (function (_super) {
     __extends(TextView, _super);
     function TextView() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     return TextView;
 }(editableTextBase.EditableTextBase));

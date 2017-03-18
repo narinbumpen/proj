@@ -4,7 +4,7 @@ var proxy = require("ui/core/proxy");
 var Slider = (function (_super) {
     __extends(Slider, _super);
     function Slider() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     Object.defineProperty(Slider.prototype, "value", {
         get: function () {
@@ -51,10 +51,10 @@ var Slider = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Slider.valueProperty = new dependencyObservable.Property("value", "Slider", new proxy.PropertyMetadata(0));
-    Slider.minValueProperty = new dependencyObservable.Property("minValue", "Slider", new proxy.PropertyMetadata(0));
-    Slider.maxValueProperty = new dependencyObservable.Property("maxValue", "Slider", new proxy.PropertyMetadata(100));
     return Slider;
 }(view.View));
+Slider.valueProperty = new dependencyObservable.Property("value", "Slider", new proxy.PropertyMetadata(0));
+Slider.minValueProperty = new dependencyObservable.Property("minValue", "Slider", new proxy.PropertyMetadata(0));
+Slider.maxValueProperty = new dependencyObservable.Property("maxValue", "Slider", new proxy.PropertyMetadata(100));
 exports.Slider = Slider;
 //# sourceMappingURL=slider-common.js.map

@@ -18,7 +18,7 @@ special_properties_1.registerSpecialProperty("top", function (instance, property
 var AbsoluteLayout = (function (_super) {
     __extends(AbsoluteLayout, _super);
     function AbsoluteLayout() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     AbsoluteLayout.isValid = function (value) {
         return isFinite(value);
@@ -57,9 +57,9 @@ var AbsoluteLayout = (function (_super) {
     };
     AbsoluteLayout.prototype.onTopChanged = function (view, oldValue, newValue) {
     };
-    AbsoluteLayout.leftProperty = new dependency_observable_1.Property("left", "AbsoluteLayout", new proxy_1.PropertyMetadata(0, undefined, AbsoluteLayout.onLeftPropertyChanged, AbsoluteLayout.isValid));
-    AbsoluteLayout.topProperty = new dependency_observable_1.Property("top", "AbsoluteLayout", new proxy_1.PropertyMetadata(0, undefined, AbsoluteLayout.onTopPropertyChanged, AbsoluteLayout.isValid));
     return AbsoluteLayout;
 }(layout_base_1.LayoutBase));
+AbsoluteLayout.leftProperty = new dependency_observable_1.Property("left", "AbsoluteLayout", new proxy_1.PropertyMetadata(0, undefined, AbsoluteLayout.onLeftPropertyChanged, AbsoluteLayout.isValid));
+AbsoluteLayout.topProperty = new dependency_observable_1.Property("top", "AbsoluteLayout", new proxy_1.PropertyMetadata(0, undefined, AbsoluteLayout.onTopPropertyChanged, AbsoluteLayout.isValid));
 exports.AbsoluteLayout = AbsoluteLayout;
 //# sourceMappingURL=absolute-layout-common.js.map

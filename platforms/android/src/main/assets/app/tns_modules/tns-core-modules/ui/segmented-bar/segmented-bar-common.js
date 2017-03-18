@@ -16,8 +16,9 @@ var CHILD_SEGMENTED_BAR_ITEM = "SegmentedBarItem";
 var SegmentedBarItem = (function (_super) {
     __extends(SegmentedBarItem, _super);
     function SegmentedBarItem() {
-        _super.apply(this, arguments);
-        this._title = "";
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._title = "";
+        return _this;
     }
     Object.defineProperty(SegmentedBarItem.prototype, "title", {
         get: function () {
@@ -41,7 +42,7 @@ exports.SegmentedBarItem = SegmentedBarItem;
 var SegmentedBar = (function (_super) {
     __extends(SegmentedBar, _super);
     function SegmentedBar() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SegmentedBar.prototype._addArrayFromBuilder = function (name, value) {
         if (name === "items") {
@@ -132,10 +133,10 @@ var SegmentedBar = (function (_super) {
         }
         return idx;
     };
-    SegmentedBar.selectedIndexProperty = new dependencyObservable.Property("selectedIndex", "SegmentedBar", new proxy.PropertyMetadata(undefined));
-    SegmentedBar.itemsProperty = new dependencyObservable.Property("items", "SegmentedBar", new proxy.PropertyMetadata(undefined));
-    SegmentedBar.selectedIndexChangedEvent = "selectedIndexChanged";
     return SegmentedBar;
 }(view.View));
+SegmentedBar.selectedIndexProperty = new dependencyObservable.Property("selectedIndex", "SegmentedBar", new proxy.PropertyMetadata(undefined));
+SegmentedBar.itemsProperty = new dependencyObservable.Property("items", "SegmentedBar", new proxy.PropertyMetadata(undefined));
+SegmentedBar.selectedIndexChangedEvent = "selectedIndexChanged";
 exports.SegmentedBar = SegmentedBar;
 //# sourceMappingURL=segmented-bar-common.js.map

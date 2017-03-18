@@ -22,8 +22,9 @@ function onTitlePropertyChanged(data) {
 var ActionBar = (function (_super) {
     __extends(ActionBar, _super);
     function ActionBar() {
-        _super.call(this);
-        this._actionItems = new ActionItems(this);
+        var _this = _super.call(this) || this;
+        _this._actionItems = new ActionItems(_this);
+        return _this;
     }
     Object.defineProperty(ActionBar.prototype, "title", {
         get: function () {
@@ -170,9 +171,9 @@ var ActionBar = (function (_super) {
         }
         return true;
     };
-    ActionBar.titleProperty = new dependencyObservable.Property("title", "ActionBar", new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onTitlePropertyChanged));
     return ActionBar;
 }(view.View));
+ActionBar.titleProperty = new dependencyObservable.Property("title", "ActionBar", new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None, onTitlePropertyChanged));
 exports.ActionBar = ActionBar;
 var ActionItems = (function () {
     function ActionItems(actionBar) {
@@ -237,7 +238,7 @@ exports.ActionItems = ActionItems;
 var ActionItem = (function (_super) {
     __extends(ActionItem, _super);
     function ActionItem() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(ActionItem.prototype, "actionView", {
         get: function () {
@@ -334,12 +335,12 @@ var ActionItem = (function (_super) {
     ActionItem.prototype._addChildFromBuilder = function (name, value) {
         this.actionView = value;
     };
-    ActionItem.tapEvent = "tap";
-    ActionItem.textProperty = new dependencyObservable.Property("text", "ActionItem", new dependencyObservable.PropertyMetadata("", null, ActionItem.onItemChanged));
-    ActionItem.iconProperty = new dependencyObservable.Property("icon", "ActionItem", new dependencyObservable.PropertyMetadata(null, null, ActionItem.onItemChanged));
-    ActionItem.visibilityProperty = new dependencyObservable.Property("visibility", "ActionItem", new dependencyObservable.PropertyMetadata(enums.Visibility.visible, null, ActionItem.onItemChanged));
     return ActionItem;
 }(bindable.Bindable));
+ActionItem.tapEvent = "tap";
+ActionItem.textProperty = new dependencyObservable.Property("text", "ActionItem", new dependencyObservable.PropertyMetadata("", null, ActionItem.onItemChanged));
+ActionItem.iconProperty = new dependencyObservable.Property("icon", "ActionItem", new dependencyObservable.PropertyMetadata(null, null, ActionItem.onItemChanged));
+ActionItem.visibilityProperty = new dependencyObservable.Property("visibility", "ActionItem", new dependencyObservable.PropertyMetadata(enums.Visibility.visible, null, ActionItem.onItemChanged));
 exports.ActionItem = ActionItem;
 function isVisible(item) {
     return item.visibility === enums.Visibility.visible;

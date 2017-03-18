@@ -4,22 +4,23 @@ var CHANGE = "change", UPDATE = "update", DELETE = "delete", ADD = "add";
 var ChangeType = (function () {
     function ChangeType() {
     }
-    ChangeType.Add = "add";
-    ChangeType.Delete = "delete";
-    ChangeType.Update = "update";
-    ChangeType.Splice = "splice";
     return ChangeType;
 }());
+ChangeType.Add = "add";
+ChangeType.Delete = "delete";
+ChangeType.Update = "update";
+ChangeType.Splice = "splice";
 exports.ChangeType = ChangeType;
 var VirtualArray = (function (_super) {
     __extends(VirtualArray, _super);
     function VirtualArray(length) {
         if (length === void 0) { length = 0; }
-        _super.call(this);
-        this._length = length;
-        this._cache = {};
-        this._requestedIndexes = [];
-        this._loadedIndexes = [];
+        var _this = _super.call(this) || this;
+        _this._length = length;
+        _this._cache = {};
+        _this._requestedIndexes = [];
+        _this._loadedIndexes = [];
+        return _this;
     }
     Object.defineProperty(VirtualArray.prototype, "length", {
         get: function () {
@@ -129,9 +130,9 @@ var VirtualArray = (function (_super) {
             });
         }
     };
-    VirtualArray.changeEvent = CHANGE;
-    VirtualArray.itemsLoadingEvent = "itemsLoading";
     return VirtualArray;
 }(observable.Observable));
+VirtualArray.changeEvent = CHANGE;
+VirtualArray.itemsLoadingEvent = "itemsLoading";
 exports.VirtualArray = VirtualArray;
 //# sourceMappingURL=virtual-array.js.map
