@@ -1,6 +1,7 @@
 <Page loaded="pageLoad">
     <StackLayout>
+    
         <Label text="Login" />
-        
+
     </StackLayout>
 </Page>
